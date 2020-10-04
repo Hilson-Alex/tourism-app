@@ -5,35 +5,50 @@ body {
 }
 
 .main{
-  orientation: landscape;
-  justify-content: space-between;
   display: flex;
   margin-left: 2rem;
   margin-right: 2rem;
-  
 }
 
 h1 {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 32px;
+  font-size: 52px;
   display: flex;
   width: 100%;
   justify-content: center;
   font-style: italic;
 }
 
+h2 {
+  font-size: 32px;
+  width: 60%;
+}
+
 h4 {
-  font-size: medium;
+  font-size: 25px;
+}
+
+.input{
+  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
 }
 
 .form{
-  display: flex;
-  width: 20rem; 
+  display: flex; 
   align-items: center;
-  margin-left: 10rem;
+  height: 70px;
 }
-.input{
+
+.output{
   display: flex;
-  
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
 }
+
+
+
 
