@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { createPost } from './httpHandle'
+import Result from './Result';
 
 const initialstate = {
-        estacao: '',
-        custo: '',
-        num_pessoas: '',
-        num_criancas: '',
-        tipo: '',
-        grupo: '',
+        form: {
+            estacao: 'VERAO',
+            custo: 0.5,
+            num_pessoas: 4,
+            num_criancas: 2,
+            tipo: 'PRAIA',
+            distancia: 50,
+            grupo: 'FAMILIA',
+        },
+        result: [],
 }
-
-let result = {}
 
 class HomePage extends Component {
     constructor(props){
@@ -18,24 +21,35 @@ class HomePage extends Component {
         this.state = initialstate;
         this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFormInput = this.handleFormInput.bind(this);
     };
 
+    handleFormInput = (name, value) => {
+        this.setState({
+            ...this.state,
+            form: {
+                ...this.state.form,
+                [name]: value
+            }
+        })
+    }
+
     onChange(e) {
-        if(e.target.name === 'custo'){
-            this.setState({...this.state, custo: parseFloat(e.target.value) })
-        }else if(e.target.name === 'num_pessoas'){
-            this.setState({...this.state, num_pessoas: parseInt(e.target.value) })
-        }else if(e.target.name === 'num_criancas'){
-            this.setState({...this.state, num_criancas: parseInt(e.target.value) })
+        if(e.target.name === "custo"){
+            this.handleFormInput(e.target.name, parseFloat(e.target.value));
+        }else if(e.target.name === "num_pessoas" || e.target.name === "num_criancas"){
+            this.handleFormInput(e.target.name, parseInt(e.target.value));
         }else {
-            this.setState({...this.state, [e.target.name]: e.target.value })
-        } 
+            this.handleFormInput(e.target.name, e.target.value);
+        }
     };
 
     handleSubmit(e) {
         e.preventDefault();
-        createPost(this.state);
-        console.log("RESULTADO: ",result);
+        createPost(this.state.form).then(response => {
+            let result = response;
+            this.setState({...this.state, result: result})
+        })
     };
 
 
@@ -122,6 +136,8 @@ class HomePage extends Component {
 
                     <div className="output">
                         <h2>Veja o melhor ponto turístico pra você curtir</h2>
+                        {this.state.result.length ? <Result form={this.state.form} result={this.state.result} /> : ""}
+                        
                     </div>
                 </div>
             </div>
