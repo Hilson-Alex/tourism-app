@@ -9,7 +9,7 @@ export function createPost(data){
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         }
-    })
+    }).catch(() => fetch('http://localhost:8080'))
     .then((response) => response.json())
     .then((responseJson) => {
         return responseJson;
