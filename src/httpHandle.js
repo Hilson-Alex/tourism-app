@@ -1,15 +1,16 @@
 import fetch from 'isomorphic-fetch';
 
+const URL = process.env.REACT_APP_API_URL || 'http://localhost:8080';
 
 export function createPost(data){
-    return fetch('https://tourism-reco-api.herokuapp.com/similarity', {
+    return fetch(URL + '/similarity', {
         method: 'POST',
         body: JSON.stringify( {case: data} ),
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         }
-    }).catch(() => fetch('http://localhost:8080'))
+    })
     .then((response) => response.json())
     .then((responseJson) => {
         return responseJson;
@@ -18,7 +19,7 @@ export function createPost(data){
 }
 
 export function saveResult(data){
-    return fetch('https://tourism-reco-api.herokuapp.com/insert', {
+    return fetch(URL + '/insert', {
         method: 'POST',
         body: JSON.stringify( {case: data} ),
         headers: {
