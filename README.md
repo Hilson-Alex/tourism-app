@@ -1,69 +1,35 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Tourism App
 
-In the project directory, you can run:
+A Tourism place recommendation frontend for our Case-based reasoning intelligence to recommend places to visit. This project is just the frontend, you can see the backend [here](https://github.com/Hilson-Alex/tourism_api) or the entire project [here](https://github.com/Hilson-Alex/tourism-ai).
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If you want to see this working you can open https://tourism-reco-app.herokuapp.com/ and see it working. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+We use places from **Santa Catarina - Brazil** cause it's the place where we live.
 
-### `yarn test`
+### Installing
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We highly recommend that, if you want to run  this project locally, look for [our project with frontend and backend instead](https://github.com/Hilson-Alex/tourism-ai).
 
-### `yarn build`
+With that in mind, if you want to run this, and only this project, all you have to do is:
+```bash
+git clone https://github.com/Hilson-Alex/tourism-app.git
+cd ./tourism-app
+npm install
+npm run start
+```
+this will run the api in the port 3000.
+By default, it requests to our heroku backend in https://tourism-reco-api.herokuapp.com/, but you can set an environment variable in a .env file named REACT_APP_API_URL to set your backend URL.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Authors
+This code was implemented by:
+* [@Hilson-Alex](https://github.com/Hilson-Alex)
+* [@rick32132](https://github.com/rick32132)
+* [@TheMarhsall007](https://github.com/TheMarhsall007)
+* And Bruna Rebello, who doesn't have an account at the moment this was posted
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# tourism-app
+## License
+This project is under the MIT License, that you can see in [LICENSE](/LICENSE) file
