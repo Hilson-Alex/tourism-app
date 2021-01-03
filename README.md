@@ -22,7 +22,9 @@ npm install
 npm run start
 ```
 this will run the api in the port 3000.
-By default, it requests to our heroku backend in https://tourism-reco-api.herokuapp.com/, but you can set an environment variable in a .env file named REACT_APP_API_URL to set your backend URL.
+By default, it requests to the port 8080 of locallhost, but you can set an environment variable in a .env file named REACT_APP_API_URL to set your backend URL.
+
+Obs: if you want to request our heroku backend, set REACT_APP_API_URL=https://tourism-reco-api.herokuapp.com on the .env file
 
 ## Authors
 This code was implemented by:
